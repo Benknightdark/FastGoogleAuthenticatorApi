@@ -1,17 +1,25 @@
 from typing import Optional
 from fastapi import FastAPI
 from pydantic import BaseModel
+from fastapi.responses import HTMLResponse,FileResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+from fastapi.responses import StreamingResponse
+from starlette.requests import Request
 import pyotp
 
 app = FastAPI()
-
+app.mount("/static", StaticFiles(directory="static"), name="static")
+templates = Jinja2Templates(directory="templates")
 
 class OtpModel(BaseModel):
     username: str
     issuer_name: str
     secret_key: Optional[str]
 
-
+@app.get("/", response_class=HTMLResponse)
+def http(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
 
 @app.post("/otp_uri",summary="回傳Google Authenticator驗證網址")
 async def get_otp_uri(data: OtpModel):
