@@ -1,0 +1,10 @@
+import pyotp
+secret_key=pyotp.random_base32()
+print(secret_key)
+totp=pyotp.totp.TOTP("DJEBCUIAED5DG3OJDGBUNEW5UIEBVC32")
+provisioning_uri=totp.provisioning_uri(name='y@b.cc', issuer_name='YoApp')
+print(provisioning_uri)
+uri_parameter=pyotp.parse_uri(provisioning_uri)
+current_top=totp.now()
+print(current_top)
+print(totp.verify(current_top))

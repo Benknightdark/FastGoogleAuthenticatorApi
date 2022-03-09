@@ -1,0 +1,3 @@
+pyotp
+fastapi
+uvicorn[standard]
