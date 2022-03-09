@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>哏</title>
+    <title>Google Authenticator 產生器</title>
     <style>
         .border-corner:before {
             display: block;
@@ -84,10 +84,6 @@
 </head>
 
 <body>
-    <!-- <h1 class="text-3xl font-bold underline">
-        Hello world!
-    </h1>
-    <div id="qrcode"></div> -->
     <div class="min-w-screen h-screen fixed  left-0 top-0  flex justify-center items-center inset-0 z-50 bg-green-100 overflow-y-scroll bg-cover"
         style="background-image: url(https://images.unsplash.com/photo-1628254747021-59531f59504b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2134&amp;q=80);">
         <div class="absolute bg-gradient-to-tl from-indigo-600  to-green-600 opacity-80 inset-0 "></div>
@@ -101,10 +97,11 @@
                 <div class="flex flex-row items-center ">
                     <svg xmlns="http://www.w3.org/2000/svg"
                         class="h-8 w-8 p-2 cursor-pointer hover:bg-gray-500 text-gray-50 rounded-full mr-3" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-                    </svg> <span class="text-sm">QR Code</span>
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
+                    </svg>
+                    <span class="text-sm">Google Authenticator 產生器</span>
                 </div>
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -121,11 +118,12 @@
                         style="background-image: url(https://images.unsplash.com/photo-1590520181753-3fff75292722?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2134&amp;q=80);">
                         <span class="border_bottom"></span>
                     </div> -->
-                    <div id="qrcode" class="relative border-corner 	 p-5 relative m-auto  rounded-xl bg-cover w-48 h-48 flex ">
+                    <div id="qrcode"
+                        class="relative border-corner 	 p-5 relative m-auto  rounded-xl bg-cover w-48 h-48 flex ">
                         <span class="border_bottom"></span>
-                    </div> 
+                    </div>
                 </div>
-                <p class="text-gray-300 text-xs mt-3">Scan a QR Code</p>
+                <p class="text-gray-300 text-xs mt-3">使用Google Authenticator掃描</p>
                 <div class="mt-5 w-full flex items-center justify-between space-x-3 my-3 absolute bottom-0 left-0 px-2">
                     <div class="flex ">
                         <svg xmlns="http://www.w3.org/2000/svg"
